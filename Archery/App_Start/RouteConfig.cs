@@ -15,11 +15,11 @@ namespace Archery
 
             routes.MapMvcAttributeRoutes();
 
-            //routes.MapRoute(
-            //    name:"AboutRoute",
-            //    url:"a-propos",
-            //    defaults: new {controller = "Home", action="About"}
-            //    );
+            routes.MapRoute(
+                name: "AboutRoute",
+                url: "a-propos",
+                defaults: new { controller = "Home", action = "About" }
+                );
 
             routes.MapRoute(
                 name: "Default",
