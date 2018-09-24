@@ -15,6 +15,7 @@ namespace Archery.Controllers
             return View();
         }
 
+        [Route ("a-propos")]
         public ActionResult About()
         {
             var modelInfo = new Info
