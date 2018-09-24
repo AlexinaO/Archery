@@ -13,5 +13,10 @@ namespace Archery.Controllers
         {
             return View();
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
     }
 }
