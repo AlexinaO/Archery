@@ -17,7 +17,7 @@ namespace Archery.Models
 
         public string ConfirmedPassword { get; set; }
 
-        public string Email { get; set; }
+        public string Mail { get; set; }
 
         public DateTime BirthDate { get; set; }
     }
