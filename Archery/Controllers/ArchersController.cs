@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Archery.Controllers
 {
-    public class PlayersController : Controller
+    public class ArchersController : Controller
     {
         // GET: Players
-        public ActionResult Index()
+        public ActionResult Subscribe()
         {
             return View();
         }
