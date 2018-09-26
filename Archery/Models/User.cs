@@ -22,7 +22,7 @@ namespace Archery.Models
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display(Name = "Mot de Passe")]
         [DataType(DataType.Password)]
-        [RegularExpression (@"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\da-ZA-Z]).{6,}$", ErrorMessage ="{0} incorrect.")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{6,}$", ErrorMessage = "{0} incorrect.")]
         public string Password { get; set; }
 
         [Display(Name ="Confirmation du mot de Passe")]
@@ -39,6 +39,7 @@ namespace Archery.Models
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display(Name ="Date de Naissance")]
         [DataType(DataType.Date)]
+        
         public DateTime BirthDate { get; set; }
     }
 }
