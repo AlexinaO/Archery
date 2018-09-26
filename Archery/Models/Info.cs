@@ -11,6 +11,6 @@ namespace Archery.Models
 
         public DateTime CreatedDate { get; set; }
 
-        public String ContactMail { get; set; }
+        public string ContactMail { get; set; }
     }
 }
