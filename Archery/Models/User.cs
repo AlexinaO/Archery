@@ -24,8 +24,10 @@ namespace Archery.Models
         [DataType(DataType.Password)]
         public string ConfirmedPassword { get; set; }
 
+        [Display(Name ="Adresse E-mail")]
         public string Mail { get; set; }
 
+        [Display(Name ="Date de Naissance")]
         [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
     }
