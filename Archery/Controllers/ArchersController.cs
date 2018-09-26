@@ -13,5 +13,10 @@ namespace Archery.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Subscribe(string email)
+        {
+            return View();
+        }
     }
 }
