@@ -18,10 +18,19 @@ namespace Archery.Controllers
         [HttpPost]
         public ActionResult Subscribe(Archer archer )
         {
-
+            if (ModelState.IsValid)
+            {
+                //if (archer.BirthDate > DateTime.Now.AddYears(-9)
+                //    {
+                //    return ErrorMessage();
+                //}
+            }
             return View();
         }
 
-       
+       //public static ErrorMessage (string errorMessage)
+       // {
+
+       // }
     }
 }
