@@ -80,7 +80,10 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        
+        @if (TempData["Success"] != null)
+        {
+        <p class="alert-success">@TempData["Success"]</p>
+        }
 
         @RenderBody()
 
