@@ -7,7 +7,8 @@ using System.Globalization;
 
 namespace Archery.Models
 {
-    public class Age : ValidationAttribute
+    [AttributeUsage(AttributeTargets.Property)]
+    public sealed class Age : ValidationAttribute
     {
         public int MinimumAge { get; private set; }
 
