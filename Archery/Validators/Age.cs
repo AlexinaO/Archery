@@ -25,5 +25,10 @@ namespace Archery.Models
                 throw new ArgumentException("Le type doit être un DateTime");
         }
 
+        public override string FormatErrorMessage(string name)
+        {
+            return string.Format(this.ErrorMessage, name, this.MinimumAge.ToString());
+        }
+
     }
 }
