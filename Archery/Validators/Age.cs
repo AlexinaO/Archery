@@ -19,7 +19,7 @@ namespace Archery.Models
         {
             if (value is DateTime)
             {
-                return DateTime.Now.AddYears(-this.MinimumAge) <= (DateTime)value;
+                return DateTime.Now.AddYears(-this.MinimumAge) >= (DateTime)value;
             }
             else
                 throw new ArgumentException("Le type doit être un DateTime");
