@@ -10,6 +10,7 @@ namespace Archery.Models
     {
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display (Name ="Numéro de licence")]
+        [StringLength(15)]
         public string LicenseNumber { get; set; }
 
     }

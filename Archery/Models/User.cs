@@ -13,10 +13,12 @@ namespace Archery.Models
 
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display(Name ="Nom")]
+        [StringLength(50)]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display(Name = "Prénom")]
+        [StringLength(50)]
         public string LastName { get; set; }
 
 
@@ -24,6 +26,7 @@ namespace Archery.Models
         [Display(Name = "Mot de Passe")]
         [DataType(DataType.Password)]
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{6,}$", ErrorMessage = "{0} incorrect.")]
+        [StringLength(150)]
         public string Password { get; set; }
 
         [NotMapped]
@@ -43,6 +46,7 @@ namespace Archery.Models
         [DataType(DataType.Date)]
         //[Age(9,ErrorMessage ="Pour ce champ {0}, vous devez avoir plus de {1} ans")]
         [Age(9, MaximumAge =90,ErrorMessage ="Pour ce champ {0}, vous devez avoir plus de {1} ans et moins de {2} ans.")]
+        [Column(TypeName ="datetime2")]
         public DateTime BirthDate { get; set; }
     }
 }
