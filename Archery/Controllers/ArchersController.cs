@@ -18,12 +18,19 @@ namespace Archery.Controllers
         [HttpPost]
         public ActionResult Subscribe(Archer archer )
         {
+            /* si on met ici alors cela va être uniquement dans ce contrôleur et il faudra le copier dans chaque contrôleur où on veut l'utiliser!*/
+            //if (DateTime.Now.AddYears(-9) <= archer.BirthDate) /*à utiliser pour 1ère et 2ème façon*/
+            //{
+            //    /*ViewBag.Erreur = "Vous êtes trop jeune !";
+            //    return View(); 1ère façon de faire*/
+            //    ModelState.AddModelError("BirthDate", "Date de naissance invalide");/*2ème façon de faire*/
+
+            //}
+
+
             if (ModelState.IsValid)
             {
-                //if (archer.BirthDate > DateTime.Now.AddYears(-9)
-                //    {
-                //    return ErrorMessage();
-                //}
+               
             }
             return View();
         }
