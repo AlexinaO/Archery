@@ -33,17 +33,21 @@ namespace Archery.Models
 
         public override bool IsValid(object value)
         {
-            if (value is DateTime)
+            if (value != null)
             {
-                if (this.maximumAge == null)
+                if (value is DateTime)
                 {
-                    return (DateTime.Now.AddYears(-this.MinimumAge) >= (DateTime)value);
+                    if (this.maximumAge == null)
+                    {
+                        return (DateTime.Now.AddYears(-this.MinimumAge) >= (DateTime)value);
+                    }
+                    else
+                        return (DateTime.Now.AddYears(-this.MinimumAge) >= (DateTime)value && ((DateTime)value).AddYears(this.MaximumAge) >= DateTime.Now);
                 }
                 else
-                    return (DateTime.Now.AddYears(-this.MinimumAge) >= (DateTime)value && ((DateTime)value).AddYears(this.MaximumAge) >= DateTime.Now);
-            }
-            else
                 throw new ArgumentException("Le type doit être un DateTime");
+                }
+            return false;
         }
 
         public override string FormatErrorMessage(string name)
