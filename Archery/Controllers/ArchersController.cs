@@ -26,10 +26,11 @@ namespace Archery.Controllers
             {
                 db.Archers.Add(archer);
                 db.SaveChanges();
-                TempData["Success"] = "Vous êtes bien inscrits";
+                TempData["Success"] = "Inscription effectuée";
                 //return View();
                 return RedirectToAction("index", "Home");
             }
+            ViewBag.Message = "Veuillez corriger les erreurs";
             return View();
         }
 
