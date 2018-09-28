@@ -18,7 +18,7 @@
 @using (Html.BeginForm())
 {
     @*@Html.ValidationSummary(null, new {  @class="alert alert-danger"})*@
-
+    @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(x => x.FirstName, new { @class = "control-label" })
         @Html.EditorFor(x => x.FirstName, new { htmlAttributes = new { @class = "form-control" } }) @*permet d'avoir un form-control dans les input*@
