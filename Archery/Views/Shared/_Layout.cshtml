@@ -3,7 +3,7 @@
     Layout = null;
 }
 
-@{ 
+@{
     var message = TempData["MESSAGE"] as Archery.Tools.Message;
 
 }
@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    
+    <div class="container">
         <header class="page-header" style="text-align:center">
             <h1>Archery</h1>
         </header>
@@ -86,23 +86,23 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        <div class="container">
-
-            @if (message != null)
-            {
-                <div class="alert alert-@(message.MessageType == Archery.Tools.MessageType.SUCCESS ? "success" : "danger")">
-                    @message.Text
-                    </div>
-            }
-
-            @RenderBody()
 
 
+        @if (message != null)
+        {
+            <div class="alert alert-@(message.MessageType == Archery.Tools.MessageType.SUCCESS ? "success" : "danger")">
+                @message.Text
+            </div>
+        }
 
-            <footer class="panel-footer">
-                &copy;2018
-            </footer>
-        </div>
+        @RenderBody()
+
+
+
+        <footer class="panel-footer">
+            &copy;2018
+        </footer>
+    </div>
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 
