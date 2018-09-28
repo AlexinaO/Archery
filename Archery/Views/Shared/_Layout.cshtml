@@ -80,9 +80,16 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        @if (TempData["Success"] != null)
+        @if (!string.IsNullOrWhiteSpace(TempData["Success"]as string))
         {
-        <p class="alert-success">@TempData["Success"]</p>
+            <p class="alert-success">@TempData["Success"]</p>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(ViewBag.message))
+        {
+            <p class="alert alert-danger">
+                @ViewBag.Message
+            </p>
         }
 
         @RenderBody()
