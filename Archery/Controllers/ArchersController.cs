@@ -16,9 +16,6 @@ namespace Archery.Controllers
             return View();
         }
 
-
-        private ArcheryDbContext db = new ArcheryDbContext();
-
         [HttpPost]
         public ActionResult Subscribe(Archer archer )
         {
@@ -31,16 +28,11 @@ namespace Archery.Controllers
                 Display("Archer enregistré"); //Le type par défaut est success voir BaseControler.cs
                 return RedirectToAction("index", "Home");
             }
-            ViewBag.Message = "Veuillez corriger les erreurs";
+            Display("Veuillez corriger les erreurs",Tools.MessageType.ERROR);
             return View();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                this.db.Dispose();
-        }
+        
 
     }
 }
