@@ -6,14 +6,19 @@
 
 @section SectionTitle
 {
- Nouveau tireur
+    Nouveau tireur
 }
 
 
 
 @*<form role="form" method="post" >*@
 
-
+@if (!string.IsNullOrWhiteSpace(ViewBag.message))
+{
+    <p class="alert alert-danger">
+        @ViewBag.Message
+    </p>
+}
 
 @using (Html.BeginForm())
 {
