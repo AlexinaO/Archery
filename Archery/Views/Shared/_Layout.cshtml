@@ -2,11 +2,7 @@
 @{
     Layout = null;
 }
-@using Archery.Tools;
-@{
-    var message = TempData["MESSAGE"] as Message;
 
-}
 
 
 <!DOCTYPE html>
@@ -88,12 +84,7 @@
 
 
 
-        @if (message != null)
-        {
-            <div class="alert alert-@(message.MessageType == MessageType.SUCCESS ? "success" : "danger")">
-                @message.Text
-            </div>
-        }
+        @Html.Partial("_PartialDisplay")
 
         @RenderBody()
 
