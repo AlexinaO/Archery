@@ -169,7 +169,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
-    <Compile Include="Tools\SHA1.cs" />
+    <Compile Include="Tools\Encryptor.cs" />
     <Compile Include="Tools\Message.cs" />
     <Compile Include="Validators\Age.cs" />
     <Compile Include="Models\Info.cs" />
