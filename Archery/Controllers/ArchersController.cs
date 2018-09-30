@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Archery.Tools;
 
 namespace Archery.Controllers
 {
@@ -22,6 +23,7 @@ namespace Archery.Controllers
         {
             if (ModelState.IsValid)
             {
+                archer.Password = Encryptor.MD5Hash(archer.Password);
                 db.Archers.Add(archer);
                 db.SaveChanges();
                 //TempData["Success"] = "Inscription effectuée";
