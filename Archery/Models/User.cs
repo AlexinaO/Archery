@@ -5,10 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Archery.Models
 {
-    public abstract class User
+    public abstract class User : BaseModel
     {
-        public int ID { get; set; }
-
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display(Name = "Nom")]
         [StringLength(50)]
