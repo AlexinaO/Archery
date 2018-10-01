@@ -175,6 +175,10 @@
     <Compile Include="Migrations\201810010943471_UniqueEmail2.Designer.cs">
       <DependentUpon>201810010943471_UniqueEmail2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810011009542_IndexUnique.cs" />
+    <Compile Include="Migrations\201810011009542_IndexUnique.Designer.cs">
+      <DependentUpon>201810011009542_IndexUnique.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Tools\Extension.cs" />
@@ -224,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810010943471_UniqueEmail2.resx">
       <DependentUpon>201810010943471_UniqueEmail2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810011009542_IndexUnique.resx">
+      <DependentUpon>201810011009542_IndexUnique.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
