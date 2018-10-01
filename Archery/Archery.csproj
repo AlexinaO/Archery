@@ -167,6 +167,14 @@
     <Compile Include="Migrations\201809271422235_Init.Designer.cs">
       <DependentUpon>201809271422235_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810010910390_UniqueEmail.cs" />
+    <Compile Include="Migrations\201810010910390_UniqueEmail.Designer.cs">
+      <DependentUpon>201810010910390_UniqueEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810010943471_UniqueEmail2.cs" />
+    <Compile Include="Migrations\201810010943471_UniqueEmail2.Designer.cs">
+      <DependentUpon>201810010943471_UniqueEmail2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Tools\Extension.cs" />
@@ -176,6 +184,7 @@
     <Compile Include="Models\Archer.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\Email.cs" />
     <Compile Include="Validators\SaveChanges.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +218,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809271422235_Init.resx">
       <DependentUpon>201809271422235_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810010910390_UniqueEmail.resx">
+      <DependentUpon>201810010910390_UniqueEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810010943471_UniqueEmail2.resx">
+      <DependentUpon>201810010943471_UniqueEmail2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
