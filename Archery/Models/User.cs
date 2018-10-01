@@ -32,7 +32,7 @@ namespace Archery.Models
         [Compare("Password", ErrorMessage = "La confirmation n'est pas bonne.")]
         public string ConfirmedPassword { get; set; }
 
-        //[Index("Mail", IsUnique = true)]
+        [Index(IsUnique = true)]
         [Email(ErrorMessage = "Le mail existe déjà.")]
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [StringLength(150, ErrorMessage = "Le champ {0} doit contenir {1} caractères max.")]
