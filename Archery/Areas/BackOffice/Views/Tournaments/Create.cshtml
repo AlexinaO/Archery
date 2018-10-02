@@ -33,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = " date glyphicon-calendar form-control" } })
+                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = " date glyphicon-calendar form-control", autocomplete = "off" } })
                 @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
                 @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -89,10 +89,10 @@
         $(function () {
             //$.datetimepicker.setLocale('fr');
             $('#StartDate').datetimepicker({
-                lang: 'fr', step: 15
+                lang: 'fr', step: 15, format:'d/m/Y H:i'
             });
             $('#EndDate').datetimepicker({
-                lang: 'fr', step: 15
+                lang: 'fr', step: 15, format: 'd/m/Y H:i'
             });
         });
     </script>
