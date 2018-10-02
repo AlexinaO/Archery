@@ -37,5 +37,9 @@ namespace Archery.Models
 
         [Display(Name = "Tireur")]
         public ICollection<Shooter> Shooters { get; set; }
+
+        [Display(Name = "Description")]
+        [DataType(DataType.MultilineText)]
+        public string Description { get; set; }
     }
 }
