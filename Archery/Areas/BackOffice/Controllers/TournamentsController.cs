@@ -66,7 +66,7 @@ namespace Archery.Areas.BackOffice.Controllers
         }
 
         // GET: BackOffice/Tournaments/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int[]BowsID)
         {
             if (id == null)
             {
@@ -77,6 +77,9 @@ namespace Archery.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
+            tournament.Bows = db.TournamentBows.Where(x => Bow_ID.Contains(x.ID)).ToList();
+            MultiSelectList bowsValues = new MultiSelectList(db.Bows, "ID", "Name");
+            ViewBag.Bows = bowsValues;
             return View(tournament);
         }
 
