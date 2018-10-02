@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace Archery.Models
 {
-    public class Bow
+    public class Bow : BaseModel
     {
         [Required]
         [Display(Name = "Type d'arc")]
