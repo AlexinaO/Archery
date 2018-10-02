@@ -82,14 +82,14 @@
     @Html.ActionLink("Retour à la liste des compétitions", "Index")
 </div>
 @section SectionScripts{
-
+    <script src="~/Scripts/tinymce/tinymce.min.js"></script>
     <script src="~/Scripts/jquery.datetimepicker.js"></script>
 
     <script>
         $(function () {
             //$.datetimepicker.setLocale('fr');
             $('#StartDate').datetimepicker({
-                lang: 'fr', step: 15, format:'d/m/Y H:i'
+                lang: 'fr', step: 15, format: 'd/m/Y H:i'
             });
             $('#EndDate').datetimepicker({
                 lang: 'fr', step: 15, format: 'd/m/Y H:i'
