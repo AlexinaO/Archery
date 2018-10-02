@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 namespace Archery.Models
@@ -8,7 +11,6 @@ namespace Archery.Models
         [Required]
         [Display(Name = "Type d'arc")]
         public string Name { get; set; }
-
         [Display(Name = "Tournoi")]
         public ICollection<Tournament> Tournaments { get; set; }
     }
