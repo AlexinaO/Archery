@@ -187,8 +187,16 @@
     <Compile Include="Migrations\201810011009542_IndexUnique.Designer.cs">
       <DependentUpon>201810011009542_IndexUnique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810011503462_BackOffice.cs" />
+    <Compile Include="Migrations\201810011503462_BackOffice.Designer.cs">
+      <DependentUpon>201810011503462_BackOffice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Bow.cs" />
+    <Compile Include="Models\Shooter.cs" />
+    <Compile Include="Models\Tournament.cs" />
     <Compile Include="Tools\Extension.cs" />
     <Compile Include="Tools\Message.cs" />
     <Compile Include="Validators\Age.cs" />
@@ -240,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810011009542_IndexUnique.resx">
       <DependentUpon>201810011009542_IndexUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810011503462_BackOffice.resx">
+      <DependentUpon>201810011503462_BackOffice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
