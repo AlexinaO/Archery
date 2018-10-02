@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<Archery.Models.Bow>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Liste des arcs";
 }
 
-<h2>Index</h2>
+<h2>Liste des types d'arc</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Ajouter un type d'arc", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-bordered">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
