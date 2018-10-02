@@ -70,9 +70,10 @@
 
         <dd>
             <table class="table table-striped">
-                <!--TODO-->@foreach (var item)
-
-                    @Model.Bows
+                @foreach (var item in Model.Bows)
+                {
+                    <tr><td>@item.Name</td></tr>
+                }
             </table>
         </dd>
     </dl>
