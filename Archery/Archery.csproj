@@ -190,6 +190,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Bow.cs" />
     <Compile Include="Tools\Extension.cs" />
     <Compile Include="Tools\Message.cs" />
     <Compile Include="Validators\Age.cs" />
