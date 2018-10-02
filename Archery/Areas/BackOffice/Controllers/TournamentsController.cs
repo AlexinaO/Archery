@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Archery.Data;
+using Archery.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Archery.Data;
-using Archery.Models;
 
 namespace Archery.Areas.BackOffice.Controllers
 {
@@ -43,11 +39,11 @@ namespace Archery.Areas.BackOffice.Controllers
         }
 
         // POST: BackOffice/Tournaments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Location,StartDate,EndDate,ArcherCount,Price")] Tournament tournament)
+        public ActionResult Create([Bind(Include = "ID,Name,Location,StartDate,EndDate,ArcherCount,Price, Description")] Tournament tournament)
         {
             if (ModelState.IsValid)
             {
@@ -75,11 +71,11 @@ namespace Archery.Areas.BackOffice.Controllers
         }
 
         // POST: BackOffice/Tournaments/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Location,StartDate,EndDate,ArcherCount,Price")] Tournament tournament)
+        public ActionResult Edit([Bind(Include = "ID,Name,Location,StartDate,EndDate,ArcherCount,Price, Description")] Tournament tournament)
         {
             if (ModelState.IsValid)
             {
