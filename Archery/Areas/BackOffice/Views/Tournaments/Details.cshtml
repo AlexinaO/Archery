@@ -64,6 +64,17 @@
         <dd>
             @Html.Raw(Model.Description)
         </dd>
+        <dt>
+            Types d'Arcs
+        </dt>
+
+        <dd>
+            <table class="table table-striped">
+                <!--TODO-->@foreach (var item)
+
+                    @Model.Bows
+            </table>
+        </dd>
     </dl>
 </div>
 <p>

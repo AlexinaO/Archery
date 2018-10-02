@@ -24,7 +24,7 @@ namespace Archery.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tournament tournament = db.Tournaments.Find(id);
+            Tournament tournament = db.Tournaments.Include("Bows").SingleOrDefault(x => x.ID == id);
             if (tournament == null)
             {
                 return HttpNotFound();
@@ -49,10 +49,13 @@ namespace Archery.Areas.BackOffice.Controllers
         {
             if (ModelState.IsValid)
             {
-                foreach (var item in BowsID)
-                {
-                    tournament.Bows.Add(db.Bows.Find(item));
-                }
+                //tournament.Bows = new List<Bow>();
+                //foreach (var item in BowsID)
+                //{
+                //    tournament.Bows.Add(db.Bows.Find(item));
+                //}
+
+                tournament.Bows = db.Bows.Where(x => BowsID.Contains(x.ID)).ToList();
                 db.Tournaments.Add(tournament);
                 db.SaveChanges();
                 return RedirectToAction("Index");
