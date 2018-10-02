@@ -88,8 +88,12 @@
     <script>
         $(function () {
             //$.datetimepicker.setLocale('fr');
-            $('#StartDate').datetimepicker();
-            $('#EndDate').datetimepicker();
+            $('#StartDate').datetimepicker({
+                lang: 'fr', step: 15
+            });
+            $('#EndDate').datetimepicker({
+                lang: 'fr', step: 15
+            });
         });
     </script>
 }
