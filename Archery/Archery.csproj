@@ -448,6 +448,10 @@
     <Compile Include="Migrations\201810020933521_AddDescriptionTournament.Designer.cs">
       <DependentUpon>201810020933521_AddDescriptionTournament.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810021352230_BowsReplaceWeapons.cs" />
+    <Compile Include="Migrations\201810021352230_BowsReplaceWeapons.Designer.cs">
+      <DependentUpon>201810021352230_BowsReplaceWeapons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -522,6 +526,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810020933521_AddDescriptionTournament.resx">
       <DependentUpon>201810020933521_AddDescriptionTournament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810021352230_BowsReplaceWeapons.resx">
+      <DependentUpon>201810021352230_BowsReplaceWeapons.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
