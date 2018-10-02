@@ -45,15 +45,20 @@ namespace Archery.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Location,StartDate,EndDate,ArcherCount,Price, Description")] Tournament tournament)
+        public ActionResult Create([Bind(Include = "ID,Name,Location,StartDate,EndDate,ArcherCount,Price, Description")] Tournament tournament, int[] BowsID)
         {
             if (ModelState.IsValid)
             {
+                foreach (var item in BowsID)
+                {
+                    tournament.Bows.Add(db.Bows.Find(item));
+                }
                 db.Tournaments.Add(tournament);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            MultiSelectList bowsValues = new MultiSelectList(db.Bows, "ID", "Name");
+            ViewBag.Bows = bowsValues;
             return View(tournament);
         }
 
