@@ -34,7 +34,7 @@ namespace Archery.Models
         public decimal? Price { get; set; }
 
         [Display(Name = "Armes")]
-        public ICollection<Bow> Weapons { get; set; }
+        public ICollection<Bow> Bows { get; set; }
 
         [Display(Name = "Tireur")]
         public ICollection<Shooter> Shooters { get; set; }
