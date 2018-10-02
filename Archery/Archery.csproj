@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201810011503462_BackOffice.Designer.cs">
       <DependentUpon>201810011503462_BackOffice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810020753130_BackOffice2.cs" />
+    <Compile Include="Migrations\201810020753130_BackOffice2.Designer.cs">
+      <DependentUpon>201810020753130_BackOffice2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -257,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810011503462_BackOffice.resx">
       <DependentUpon>201810011503462_BackOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810020753130_BackOffice2.resx">
+      <DependentUpon>201810020753130_BackOffice2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
