@@ -66,19 +66,19 @@ namespace Archery.Areas.BackOffice.Controllers
         }
 
         // GET: BackOffice/Tournaments/Edit/5
-        public ActionResult Edit(int? id, int[]BowsID)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tournament tournament = db.Tournaments.Find(id);
+            Tournament tournament = db.Tournaments.Include("Bows").SingleOrDefault(x => x.ID == id);
             if (tournament == null)
             {
                 return HttpNotFound();
             }
             //tournament.Bows = db.Bows.Where(x => BowsID.Contains(x.ID)).ToList();
-            MultiSelectList bowsValues = new MultiSelectList(db.Bows, "ID", "Name");
+            MultiSelectList bowsValues = new MultiSelectList(db.Bows, "ID", "Name", tournament.Bows.Select(x => x.ID));
             ViewBag.Bows = bowsValues;
             return View(tournament);
         }
@@ -96,6 +96,8 @@ namespace Archery.Areas.BackOffice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            MultiSelectList bowsValues = new MultiSelectList(db.Bows, "ID", "Name", tournament.Bows.Select(x => x.ID));
+            ViewBag.Bows = bowsValues;
             return View(tournament);
         }
 
