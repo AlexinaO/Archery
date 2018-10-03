@@ -31,6 +31,8 @@ namespace Archery.Areas.BackOffice.Controllers
                 else
                 {
                     Session["ADMINISTRATOR"] = admin;
+                    ViewBag.AdminName = admin.FirstName;
+
                     return RedirectToAction("Index", "Dashboard", new { area = "BackOffice" }); //area inutile ici puisque nous sommes déjà dedans mais cela n'affecte rien de la mettre quand même
                 }
             }
