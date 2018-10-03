@@ -1,5 +1,6 @@
 ﻿using Archery.Models;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace Archery.Data
 {
@@ -7,6 +8,7 @@ namespace Archery.Data
     {
         public ArcheryDbContext() : base("Archery")
         {
+            this.Database.Log = s => Debug.Write(s);
         }
 
         public DbSet<Administrator> Administrators { get; set; }
@@ -20,6 +22,5 @@ namespace Archery.Data
         public DbSet<Shooter> Shooters { get; set; }
 
         //public DbSet<TournamentBow> TournamentBows { get;set }
-
     }
 }
