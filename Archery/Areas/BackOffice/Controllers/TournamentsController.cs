@@ -130,7 +130,16 @@ namespace Archery.Areas.BackOffice.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Tournament tournament = db.Tournaments.Find(id);
+            Tournament tournament = db.Tournaments.Include("Bows").SingleOrDefault(x => x.ID == id);
+            tournament.Bows.Clear();
+
+            var shooters = db.Shooters.Where(x => x.TournamentID == id);
+            foreach (var item in shooters)
+            {
+                db.Entry(item).State = EntityState.Deleted;
+                //db.Shooters.Remove(item);
+            }
+            //db.Entry(tournament).State = Entity.Deleted;
             db.Tournaments.Remove(tournament);
             db.SaveChanges();
             return RedirectToAction("Index");
