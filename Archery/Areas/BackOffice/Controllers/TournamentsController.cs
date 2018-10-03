@@ -55,7 +55,8 @@ namespace Archery.Areas.BackOffice.Controllers
                 //    tournament.Bows.Add(db.Bows.Find(item));
                 //}
 
-                tournament.Bows = db.Bows.Where(x => BowsID.Contains(x.ID)).ToList();
+                if (BowsID.Count() > 0)
+                    tournament.Bows = db.Bows.Where(x => BowsID.Contains(x.ID)).ToList();
                 db.Tournaments.Add(tournament);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -88,11 +89,19 @@ namespace Archery.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Location,StartDate,EndDate,ArcherCount,Price, Description")] Tournament tournament)
+        public ActionResult Edit([Bind(Include = "ID,Name,Location,StartDate,EndDate,ArcherCount,Price, Description")] Tournament tournament, int[] BowsID)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(tournament).State = EntityState.Modified;
+
+                db.Tournaments.Include("Bows").SingleOrDefault(x => x.ID == tournament.ID); //charge dans le cache
+                if (BowsID != null)
+                {
+                    tournament.Bows = db.Bows.Where(x => BowsID.Contains(x.ID)).ToList();
+                }
+                else
+                    tournament.Bows.Clear();
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
