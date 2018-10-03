@@ -38,5 +38,12 @@ namespace Archery.Areas.BackOffice.Controllers
             }
             return View();
         }
+
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login");
+        }
+
     }
 }
