@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
 
 namespace Archery.Models
@@ -35,6 +36,11 @@ namespace Archery.Models
 
         [Display(Name = "Armes")]
         public ICollection<Bow> Bows { get; set; }
+
+        //public Tournament()
+        //{
+        //    Bows = new List<Bow>;
+        //}
 
         [Display(Name = "Tireur")]
         public ICollection<Shooter> Shooters { get; set; }

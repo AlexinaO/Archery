@@ -77,7 +77,7 @@ namespace Archery.Areas.BackOffice.Controllers
             {
                 return HttpNotFound();
             }
-            tournament.Bows = db.TournamentBows.Where(x => Bow_ID.Contains(x.ID)).ToList();
+            //tournament.Bows = db.Bows.Where(x => BowsID.Contains(x.ID)).ToList();
             MultiSelectList bowsValues = new MultiSelectList(db.Bows, "ID", "Name");
             ViewBag.Bows = bowsValues;
             return View(tournament);
