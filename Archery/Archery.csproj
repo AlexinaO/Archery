@@ -101,10 +101,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\jquery.datetimepicker.css" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Pictures\target.svg" />
@@ -219,6 +222,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\globalize.js" />
     <Content Include="Scripts\globalize\currency.js" />
@@ -410,9 +418,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\AuthenticationController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\BowsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashboardController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TournamentsController.cs" />
+    <Compile Include="Areas\BackOffice\Models\AuthenticationViewModels.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ArchersController.cs" />
@@ -502,7 +512,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\BackOffice\Models\" />
+    <Folder Include="Areas\BackOffice\Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
