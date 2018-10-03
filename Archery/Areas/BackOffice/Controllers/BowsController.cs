@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Archery.Data;
+using Archery.Filters;
+using Archery.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Archery.Data;
-using Archery.Models;
 
 namespace Archery.Areas.BackOffice.Controllers
 {
+    [Authentication]
     public class BowsController : Controller
     {
         private ArcheryDbContext db = new ArcheryDbContext();
@@ -43,7 +41,7 @@ namespace Archery.Areas.BackOffice.Controllers
         }
 
         // POST: BackOffice/Bows/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -75,7 +73,7 @@ namespace Archery.Areas.BackOffice.Controllers
         }
 
         // POST: BackOffice/Bows/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]

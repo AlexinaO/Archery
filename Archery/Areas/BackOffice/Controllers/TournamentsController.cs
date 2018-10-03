@@ -1,4 +1,5 @@
 ﻿using Archery.Data;
+using Archery.Filters;
 using Archery.Models;
 using System.Data.Entity;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Archery.Areas.BackOffice.Controllers
 {
+    [Authentication]
     public class TournamentsController : Controller
     {
         private ArcheryDbContext db = new ArcheryDbContext();
