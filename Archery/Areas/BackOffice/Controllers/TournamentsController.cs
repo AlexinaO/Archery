@@ -177,5 +177,25 @@ namespace Archery.Areas.BackOffice.Controllers
             }
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
+        //TO DO
+        // POST: BackOffice/Tournaments/RemovePicture/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemovePicture(int id)
+        {
+            Tournament tournament = db.Tournaments.Include("Bows").SingleOrDefault(x => x.ID == id);
+            tournament.Bows.Clear();
+
+            var shooters = db.Shooters.Where(x => x.TournamentID == id);
+            foreach (var item in shooters)
+            {
+                db.Entry(item).State = EntityState.Deleted;
+                //db.Shooters.Remove(item);
+            }
+            //db.Entry(tournament).State = Entity.Deleted;
+            db.Tournaments.Remove(tournament);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

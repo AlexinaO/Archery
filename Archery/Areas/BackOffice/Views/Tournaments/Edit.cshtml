@@ -102,38 +102,39 @@
             {
                 foreach (var picture in Model.Pictures)
                 {
-            <div class="col-md-4">
-                <p>@picture.Name <a href="#"><i class="fa fa-trash-o"></i></a></p>
-                <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
+                    <div class="col-md-4">
+                        <p>@picture.Name <a href="@Url.Action("RemovePicture","Tournaments")"><i class="fa fa-trash-o"></i></a></p>
+                        <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
 
-            </div>
+                    </div>
                 }
 
             }
         </div>
     </div>
+</div>
 
-    <div class="row">
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-    @section SectionScripts{
-        <script src="~/Scripts/tinymce/tinymce.min.js"></script>
-        <script src="~/Scripts/jquery.datetimepicker.js"></script>
+<div class="row">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section SectionScripts{
+    <script src="~/Scripts/tinymce/tinymce.min.js"></script>
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
 
-        <script>
-            $(function () {
-                //$.datetimepicker.setLocale('fr');
-                $('#StartDate').datetimepicker({
-                    lang: 'fr', step: 15, format: 'd/m/Y H:i'
-                });
-                $('#EndDate').datetimepicker({
-                    lang: 'fr', step: 15, format: 'd/m/Y H:i'
-                });
-
-                tinymce.init({
-                    selector: '#Description',
-
-                })
+    <script>
+        $(function () {
+            //$.datetimepicker.setLocale('fr');
+            $('#StartDate').datetimepicker({
+                lang: 'fr', step: 15, format: 'd/m/Y H:i'
             });
-        </script>
-    }
+            $('#EndDate').datetimepicker({
+                lang: 'fr', step: 15, format: 'd/m/Y H:i'
+            });
+
+            tinymce.init({
+                selector: '#Description',
+
+            })
+        });
+    </script>
+}
