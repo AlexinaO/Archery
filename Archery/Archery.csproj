@@ -475,7 +475,7 @@
     <Compile Include="Models\Shooter.cs" />
     <Compile Include="Models\Tournament.cs" />
     <Compile Include="Models\TournamentBow.cs" />
-    <Compile Include="Models\TournamentPictures.cs" />
+    <Compile Include="Models\TournamentPicture.cs" />
     <Compile Include="Tools\Extension.cs" />
     <Compile Include="Tools\Message.cs" />
     <Compile Include="Validators\Age.cs" />

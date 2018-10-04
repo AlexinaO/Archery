@@ -48,5 +48,8 @@ namespace Archery.Models
         [DataType(DataType.MultilineText)]
         [AllowHtml]
         public string Description { get; set; }
+
+        [Display(Name = "Images")]
+        public ICollection<TournamentPicture> Pictures { get; set; }
     }
 }

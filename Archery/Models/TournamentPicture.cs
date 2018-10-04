@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Archery.Models
 {
-    public class TournamentPictures
+    public class TournamentPicture
     {
         [Required]
         [StringLength(150)]
