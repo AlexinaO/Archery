@@ -2,8 +2,10 @@
 using Archery.Filters;
 using Archery.Models;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Archery.Areas.BackOffice.Controllers
@@ -154,6 +156,26 @@ namespace Archery.Areas.BackOffice.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult AddPicture(HttpPostedFileBase picture, int id)
+        {
+            if (picture?.ContentLength > 0)
+            {
+                var tp = new TournamentPicture();
+                tp.ContentType = picture.ContentType;
+                tp.Name = picture.FileName;
+                tp.TournamentID = id;
+
+                using (var reader = new BinaryReader(picture.InputStream))
+                {
+                    tp.Content = reader.ReadBytes(picture.ContentLength);
+                }
+                db.TournamentPictures.Add(tp);
+                db.SaveChanges();
+                return RedirectToAction("edit", "tournaments", new { id = id });
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
     }
 }
