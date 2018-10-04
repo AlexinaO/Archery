@@ -102,17 +102,18 @@
             {
                 foreach (var picture in Model.Pictures)
                 {
-                    <div class="col-md-3">
-                        <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
+            <div class="col-md-4">
+                <p>@picture.Name <a href="#"><i class="fa fa-trash-o"></i></a></p>
+                <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
 
-                    </div>
+            </div>
                 }
 
             }
         </div>
     </div>
 
-    <div>
+    <div class="row">
         @Html.ActionLink("Back to List", "Index")
     </div>
     @section SectionScripts{
