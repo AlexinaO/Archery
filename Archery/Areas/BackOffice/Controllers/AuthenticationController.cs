@@ -31,7 +31,7 @@ namespace Archery.Areas.BackOffice.Controllers
                 else
                 {
                     Session["ADMINISTRATOR"] = admin;
-                    TempData["AdminName"] = admin.FirstName;
+                    //Session["AdminName"] = admin.FirstName;
 
                     return RedirectToAction("Index", "Dashboard", new { area = "BackOffice" }); //area inutile ici puisque nous sommes déjà dedans mais cela n'affecte rien de la mettre quand même
                 }
@@ -41,9 +41,8 @@ namespace Archery.Areas.BackOffice.Controllers
 
         public ActionResult Logout()
         {
-            Session.Abandon();
-            return RedirectToAction("Login");
+            Session.Remove("ADMINISTRATOR");
+            return RedirectToAction("Index", "Home", new { area = "" });
         }
-
     }
 }
