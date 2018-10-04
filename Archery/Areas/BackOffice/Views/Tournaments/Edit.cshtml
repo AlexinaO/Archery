@@ -97,30 +97,42 @@
             </div>
             <button type="submit" class="btn btn-info">Enregistrer</button>
         </form>
+        <div class="row">
+            @if (Model.Pictures != null)
+            {
+                foreach (var picture in Model.Pictures)
+                {
+                    <div class="col-md-3">
+                        <img src="data:@picture.ContentType;base64,@Convert.ToBase64String(picture.Content)" class="img-thumbnail" />
+
+                    </div>
+                }
+
+            }
+        </div>
     </div>
-</div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-@section SectionScripts{
-    <script src="~/Scripts/tinymce/tinymce.min.js"></script>
-    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    @section SectionScripts{
+        <script src="~/Scripts/tinymce/tinymce.min.js"></script>
+        <script src="~/Scripts/jquery.datetimepicker.js"></script>
 
-    <script>
-        $(function () {
-            //$.datetimepicker.setLocale('fr');
-            $('#StartDate').datetimepicker({
-                lang: 'fr', step: 15, format: 'd/m/Y H:i'
+        <script>
+            $(function () {
+                //$.datetimepicker.setLocale('fr');
+                $('#StartDate').datetimepicker({
+                    lang: 'fr', step: 15, format: 'd/m/Y H:i'
+                });
+                $('#EndDate').datetimepicker({
+                    lang: 'fr', step: 15, format: 'd/m/Y H:i'
+                });
+
+                tinymce.init({
+                    selector: '#Description',
+
+                })
             });
-            $('#EndDate').datetimepicker({
-                lang: 'fr', step: 15, format: 'd/m/Y H:i'
-            });
-
-            tinymce.init({
-                selector: '#Description',
-
-            })
-        });
-    </script>
-}
+        </script>
+    }

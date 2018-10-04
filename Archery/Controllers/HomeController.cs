@@ -13,6 +13,8 @@ namespace Archery.Controllers
             ViewData["Title"] = "Accueil";
 
             return View(db.Tournaments.Include("Bows")
+                .Include("Pictures")
+                .Where(x => x.StartDate >= DateTime.Now)
                 .OrderBy(x => x.StartDate)
                 .ToList());
         }

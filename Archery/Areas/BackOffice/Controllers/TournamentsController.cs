@@ -77,7 +77,7 @@ namespace Archery.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tournament tournament = db.Tournaments.Include("Bows").SingleOrDefault(x => x.ID == id);
+            Tournament tournament = db.Tournaments.Include("Bows").Include("Pictures").SingleOrDefault(x => x.ID == id);
             if (tournament == null)
             {
                 return HttpNotFound();
@@ -99,7 +99,7 @@ namespace Archery.Areas.BackOffice.Controllers
             {
                 db.Entry(tournament).State = EntityState.Modified;
 
-                db.Tournaments.Include("Bows").SingleOrDefault(x => x.ID == tournament.ID); //charge dans le cache
+                db.Tournaments.Include("Bows").Include("Pictures").SingleOrDefault(x => x.ID == tournament.ID); //charge dans le cache
                 if (BowsID != null)
                 {
                     tournament.Bows = db.Bows.Where(x => BowsID.Contains(x.ID)).ToList();
