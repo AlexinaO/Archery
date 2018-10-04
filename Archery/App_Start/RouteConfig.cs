@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Archery
@@ -14,6 +10,14 @@ namespace Archery
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+                name: "DetailsRoute",
+                //url: "Tournoi-{nom}/{id}",
+
+                url: "Tournoi-{nom}",
+                defaults: new { controller = "Home", action = "Details", id = UrlParameter.Optional }
+                );
 
             routes.MapRoute(
                 name: "AboutRoute",
