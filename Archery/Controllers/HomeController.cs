@@ -1,21 +1,20 @@
 ﻿using Archery.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Archery.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Home
         public ActionResult Index()
         {
             ViewData["Title"] = "Accueil";
 
-
-            return View();
+            return View(db.Tournaments.Include("Bows")
+                .OrderBy(x => x.StartDate)
+                .ToList());
         }
 
         //[Route ("a-propos")]

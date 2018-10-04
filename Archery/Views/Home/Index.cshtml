@@ -1,7 +1,27 @@
-﻿        
+﻿@model  IEnumerable<Archery.Models.Tournament>
 <div>
     <h3>
-        Bonjour
+        Prochains tournois
     </h3>
-
-   
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-3">
+                <div class="panel-body" style="border:1px solid deeppink; margin-top : 10px">
+                    <p class="text-center h4">@Html.DisplayFor(modelItem => item.Name)</p>
+                    @Html.DisplayNameFor(model => model.StartDate) : @Html.DisplayFor(modelItem => item.StartDate)
+                    <br />
+                    @Html.DisplayNameFor(model => model.EndDate): @Html.DisplayFor(modelItem => item.EndDate)
+                    <br />
+                    @Html.DisplayNameFor(model => model.Description): @Html.Raw(item.Description)
+                    <br />
+                    @Html.DisplayNameFor(model => model.Price): @Html.DisplayFor(modelItem => item.Price)
+                    <br />
+                    @Html.DisplayNameFor(model => model.Bows): @Html.DisplayFor(modelItem => item.Bows)
+                    <br />
+                    @Html.DisplayNameFor(model => model.ArcherCount): @Html.DisplayFor(modelItem => item.ArcherCount)
+                </div>
+            </div>
+        }
+    </div>
+</div>
