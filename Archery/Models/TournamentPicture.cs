@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Archery.Models
 {
-    public class TournamentPicture
+    public class TournamentPicture : BaseModel
     {
         [Required]
         [StringLength(150)]
@@ -16,6 +16,7 @@ namespace Archery.Models
         [Required]
         public byte[] Content { get; set; } //pour un enregistrement en dossier, c'est l'url
 
+        [Required]
         public int TournamentID { get; set; }
 
         [ForeignKey("TournamentID")]
