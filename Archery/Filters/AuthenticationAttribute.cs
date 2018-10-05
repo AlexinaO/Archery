@@ -13,6 +13,12 @@ namespace Archery.Filters
                 filterContext.Result = new RedirectResult(@"\BackOffice\authentication\login");
                 base.OnActionExecuting(filterContext);
             }
+
+            if (filterContext.HttpContext.Session["ARCHER"] == null)
+            {
+                filterContext.Result = new RedirectResult(@"\authentication\loginArcher");
+                base.OnActionExecuting(filterContext);
+            }
         }
     }
 }
