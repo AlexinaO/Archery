@@ -1,5 +1,8 @@
-﻿using Archery.Models;
+﻿using Archery.Areas.BackOffice.Models;
+using Archery.Filters;
+using Archery.Models;
 using Archery.Tools;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Archery.Controllers
@@ -32,6 +35,48 @@ namespace Archery.Controllers
             }
             Display("Veuillez corriger les erreurs", Tools.MessageType.ERROR);
             return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Authentication(Type = "ARCHER")]
+        public ActionResult SubscribeTournament(int? tournamentId)
+        {
+            if (tournamentId == null)
+                return HttpNotFound();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(AuthenticationLoginViewModels model)
+        {
+            var hash = model.Password.HashMD5();
+            var archer = db.Archers.SingleOrDefault(x => x.Mail == model.Mail && x.Password == hash);
+
+            if (archer == null)
+            {
+                Display("Login/Mot de passe incorrect", MessageType.ERROR);
+                return View();
+            }
+            else
+            {
+                Session["ARCHER"] = archer;
+                if (TempData["REDIRECT"] != null)
+                    return Redirect(TempData["REDIRECT"].ToString());
+                else
+
+                    return RedirectToAction("Index", "Home", new { area = "" });
+            }
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Remove("ARCHER");
+            return RedirectToAction("Index", "Home", new { area = "" });
         }
     }
 }

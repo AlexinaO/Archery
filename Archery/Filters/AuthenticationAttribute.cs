@@ -6,18 +6,24 @@ namespace Archery.Filters
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
     public class AuthenticationAttribute : ActionFilterAttribute
     {
+        public string Type { get; set; } = "BO";
+
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (filterContext.HttpContext.Session["ADMINISTRATOR"] == null)
+            if (Type == "BO")
             {
-                filterContext.Result = new RedirectResult(@"\BackOffice\authentication\login");
-                base.OnActionExecuting(filterContext);
+                if (filterContext.HttpContext.Session["ADMINISTRATOR"] == null)
+                {
+                    filterContext.Result = new RedirectResult(@"\BackOffice\authentication\login");
+                }
             }
 
-            if (filterContext.HttpContext.Session["ARCHER"] == null)
+            if (Type == "ARCHER")
             {
-                filterContext.Result = new RedirectResult(@"\authentication\loginArcher");
-                base.OnActionExecuting(filterContext);
+                if (filterContext.HttpContext.Session["ARCHER"] == null)
+                {
+                    filterContext.Result = new RedirectResult(@"\archers\login");
+                }
             }
         }
     }

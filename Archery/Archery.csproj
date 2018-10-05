@@ -474,6 +474,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\AuthenticationViewModels.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Bow.cs" />
     <Compile Include="Models\Shooter.cs" />
@@ -510,6 +511,8 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Archers\Login.cshtml" />
+    <Content Include="Views\Archers\SubscribeTournament.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -519,6 +522,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AuthenticationUser\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
