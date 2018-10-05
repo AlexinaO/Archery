@@ -40,7 +40,7 @@
                     <br />
                     @Html.DisplayNameFor(model => model.ArcherCount): @Html.DisplayFor(modelItem => item.ArcherCount)
                     <a class="btn btn-primary" href="@Url.Action("Details","home", new { id=item.ID, nom=item.Name})" role="button">Voir les détails</a>
-                    <a class="btn btn-primary" href="@Url.Action("Login","Archers")">S'inscrire</a>
+                    <a class="btn btn-primary" href="@Url.Action("SubscribeTournament","Archers", new { nom = item.Name, id = item.ID })">S'inscrire</a>
                 </div>
             </div>
 

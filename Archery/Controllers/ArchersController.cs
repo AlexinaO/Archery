@@ -51,6 +51,9 @@ namespace Archery.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public ActionResult SubscribeTournament (Shooter shooter)
+
         [HttpPost]
         public ActionResult Login(AuthenticationLoginViewModels model)
         {
