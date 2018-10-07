@@ -10,12 +10,12 @@ namespace Archery.Models
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display(Name = "Nom")]
         [StringLength(50)]
-        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display(Name = "Prénom")]
         [StringLength(50)]
-        public string LastName { get; set; }
+        public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Le champ {0} est obligatoire")]
         [Display(Name = "Mot de Passe")]
