@@ -45,7 +45,7 @@
                             @*@Html.ActionLink("A propos", "about", "Home")*@
                             <a href="@Url.RouteUrl("AboutRoute")">A propos</a>
                         </li>
-                        <li class="dropdown">
+                        @*<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
@@ -56,27 +56,27 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
-                        </li>
+                        </li>*@
                     </ul>
 
                     @if (archer == null)
                     {
-                        <form class="navbar-form navbar-right" method="post" action="@Url.Action("login", "archers")">
+                        <form class="navbar-form navbar-left" method="post" action="@Url.Action("login", "archers")">
                             <div class="form-group">
                                 <input type="text" name="mail" class="form-control" placeholder="Login">
                                 <input type="password" name="password" class="form-control" placeholder="Mot de passe" />
                             </div>
                             <button type="submit" class="btn btn-info">OK</button>
                         </form>
-                        <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-left">
                             <li><a href="@Url.Action("subscribe", "archers")">Inscription</a></li>
                         </ul>
                     }
                     else
                     {
                         <ul class="nav navbar-nav navbar-right">
-                            <li>Bonjour @archer.FirstName</li>
-                            <li><a href="@Url.Action("logout", "archers")"><i class="glyphicon glyphicon-log-out"></i></a></li>
+                            <li><a style="color:blue">Bonjour @archer.FirstName @archer.LastName</a></li>
+                            <li><a style="color:blue" href="@Url.Action("logout", "archers")"><i class="glyphicon glyphicon-log-out"></i></a></li>
                         </ul>
                     }
 

@@ -472,6 +472,14 @@
     <Compile Include="Migrations\201810041021231_TournamentPicture.Designer.cs">
       <DependentUpon>201810041021231_TournamentPicture.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810071616373_FirstNameLastNameInversion.cs" />
+    <Compile Include="Migrations\201810071616373_FirstNameLastNameInversion.Designer.cs">
+      <DependentUpon>201810071616373_FirstNameLastNameInversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810071629401_LastNameCorrection.cs" />
+    <Compile Include="Migrations\201810071629401_LastNameCorrection.Designer.cs">
+      <DependentUpon>201810071629401_LastNameCorrection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\AuthenticationViewModels.cs" />
@@ -560,6 +568,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810041021231_TournamentPicture.resx">
       <DependentUpon>201810041021231_TournamentPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810071616373_FirstNameLastNameInversion.resx">
+      <DependentUpon>201810071616373_FirstNameLastNameInversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810071629401_LastNameCorrection.resx">
+      <DependentUpon>201810071629401_LastNameCorrection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
