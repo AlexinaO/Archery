@@ -30,6 +30,9 @@ namespace Archery.Models
         [Display(Name = "Nombre d'archer max")]
         public int ArcherCount { get; set; }
 
+        public bool EnoughShooter()
+            return Shooters.Count <= ArcherCount;
+
         [Display(Name = "Prix")]
         public decimal? Price { get; set; }
 

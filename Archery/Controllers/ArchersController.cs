@@ -50,11 +50,12 @@ namespace Archery.Controllers
         {
             if (tournamentId == null)
             {
-                Display("Y'a un truc qui ne va pas", Tools.MessageType.ERROR);
-                return View();
+                return HttpNotFound();
 
             }
             Tournament tournament = db.Tournaments.Include("Bows").Include("Shooters").SingleOrDefault(x => x.ID == tournamentId);
+            Shooter shooter = db.Shooters.Include("Archers").SingleOrDefault(s => s.ArcherID == id);
+
             return View(tournament);
         }
 
