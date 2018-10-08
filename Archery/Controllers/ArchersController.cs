@@ -42,17 +42,28 @@ namespace Archery.Controllers
             return View();
         }
 
+        
+
         [HttpGet]
         [Authentication(Type = "ARCHER")]
         public ActionResult SubscribeTournament(int? tournamentId)
         {
             if (tournamentId == null)
-                return HttpNotFound();
-            return View();
+            {
+                Display("Y'a un truc qui ne va pas", Tools.MessageType.ERROR);
+                return View();
+
+            }
+            Tournament tournament = db.Tournaments.Include("Bows").Include("Shooters").SingleOrDefault(x => x.ID == tournamentId);
+            return View(tournament);
         }
 
-        //[HttpPost]
-        //public ActionResult SubscribeTournament (Shooter shooter)
+        ////[HttpPost]
+        //public ActionResult SubscribeTournament[Bind(Exclude="ID")](Shooter shooter)
+        //{
+        //    if (tournamentId==null)
+        //    return View();
+        //}
 
         [HttpPost]
         public ActionResult Login(AuthenticationLoginViewModels model)
