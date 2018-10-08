@@ -20,6 +20,12 @@ namespace Archery
                 );
 
             routes.MapRoute(
+                name:"SubscribeTournamentRoute",
+                url:"Tournoi-{nom}",
+            defaults: new {controller="Archers", action="SubscribeTournament", id=UrlParameter.Optional}
+            );
+
+            routes.MapRoute(
                 name: "AboutRoute",
                 url: "a-propos",
                 defaults: new { controller = "Home", action = "About" }
